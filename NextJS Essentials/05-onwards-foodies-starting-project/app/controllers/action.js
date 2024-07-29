@@ -1,5 +1,7 @@
 "use server";
 
+import { saveMeal } from "./meals";
+
   // Server action
   export const shareMeal=async (formData)=>{
     const meal = {
@@ -11,5 +13,5 @@
       creator_email: formData.get("email")
     }
 
-    console.log(meal)
+    await saveMeal(meal);
   }
