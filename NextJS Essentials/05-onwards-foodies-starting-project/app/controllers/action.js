@@ -2,6 +2,7 @@
 
 import { redirect } from "next/navigation";
 import { saveMeal } from "./meals";
+import { revalidatePath } from "next/cache";
 
 const isInvalidText=text=>{
   return !text || text.trim() === "";
@@ -33,5 +34,7 @@ export const shareMeal=async (prevState, formData)=>{
   }
 
   await saveMeal(meal);
+  // if you want to revalidate cache from all pages from /meals add the "layout" param
+  revalidatePath("/meals");
   redirect("/meals");
 }
