@@ -1,3 +1,5 @@
+import { getLatestNews } from "@/app/helpers/news";
+
 const DefaultLatestPage=()=>{
   const latestNews = getLatestNews();
   
