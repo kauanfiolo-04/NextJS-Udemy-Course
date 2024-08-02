@@ -1,7 +1,9 @@
 import { getAvailableNewsYears } from "@/app/helpers/news";
 import Link from "next/link";
 
-const ArchivePage=()=>{
+const FilteredNewsPage=({ params })=>{
+  const filter = params.filter;
+
   const links = getAvailableNewsYears();
 
   return (
@@ -17,4 +19,4 @@ const ArchivePage=()=>{
   );
 };
 
-export default ArchivePage;
+export default FilteredNewsPage;

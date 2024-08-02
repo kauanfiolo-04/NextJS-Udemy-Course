@@ -1,4 +1,5 @@
 import { getLatestNews } from "@/app/helpers/news";
+import NewsList from "@/components/news-list/news-list";
 
 const DefaultLatestPage=()=>{
   const latestNews = getLatestNews();
