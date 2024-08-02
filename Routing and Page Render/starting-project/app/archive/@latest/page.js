@@ -1,6 +1,14 @@
+import { getLatestNews } from "@/app/helpers/news";
+import NewsList from "@/components/news-list/news-list";
+
 const LatestPage=()=>{
+  const latestNews = getLatestNews();
+  
   return (
-    <h1>LatestPage</h1>
+    <>
+      <h2>Latest News</h2>
+      <NewsList news={latestNews}/>
+    </>
   );
 };
 
