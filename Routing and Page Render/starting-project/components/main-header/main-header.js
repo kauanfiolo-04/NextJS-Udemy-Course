@@ -1,3 +1,4 @@
+import Link from "next/link";
 import NavLink from "./main-header-nav-link";
 
 const MainHeader=()=>{
