@@ -1,4 +1,4 @@
-import { getAvailableNewsMonths, getAvailableNewsYears, getNewsForYear, getNewsForYearAndMonth } from "@/app/helpers/news";
+import { getAvailableNewsMonths, getAvailableNewsYears, getNewsForYear, getNewsForYearAndMonth } from "@/helpers/news";
 import NewsList from "@/components/news-list/news-list";
 import Link from "next/link";
 
