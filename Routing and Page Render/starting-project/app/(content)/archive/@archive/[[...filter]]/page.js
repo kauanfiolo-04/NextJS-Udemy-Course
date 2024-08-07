@@ -63,10 +63,8 @@ const FilteredNewsPage= async ({ params }) => {
 
   return (
     <>
-      <Suspense fallback={<p>Loading filters...</p>}>
-        <FilterHeader year={selectedYear} month={selectedMonth}/>
-      </Suspense>
       <Suspense fallback={<p>Loading news...</p>}>
+        <FilterHeader year={selectedYear} month={selectedMonth}/>
         <FilteredNews year={selectedYear} month={selectedMonth}/>
       </Suspense>
     </>
