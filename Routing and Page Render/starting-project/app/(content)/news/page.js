@@ -2,8 +2,8 @@ import NewsList from "@/components/news-list/news-list";
 import { getAllNews } from "@/helpers/news";
 
 const News=async ()=>{
-  const news = getAllNews();
-  
+  const news = await getAllNews();
+
   return(
     <>
       <h1>News</h1>
