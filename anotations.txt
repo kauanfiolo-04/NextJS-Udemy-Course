@@ -1,0 +1,5 @@
+ - use server | use client
+ - revalidatePath() for clean cache
+ - Cache request olny in the fetch, pass next:{revalidate: time} in the fetch options
+ - Cache request for entire page: export const revalidate|dynamic
+ - Cache request in the entire component: call unstable_noCache()
