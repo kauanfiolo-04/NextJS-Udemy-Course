@@ -5,3 +5,4 @@
  - Cache request in the entire component: call unstable_noCache()
  - RevalidatePath, if you wants all subroutes from that path to be revalidate, you need to set 'layout' param, otherwise set 'page'
  - RevalidateTag, you nedd to pass a tag as param, and all fetchs using the next options with the setted tag, wil be revalidate
+ - You can pass 'cache' from 'react', and wrapps it into a function to cache this function
