@@ -1,0 +1,3 @@
+ - Image component provided by Next, sets the srcset att in the img element and the lazyload too, you can set the size of the image manually or set the size att
+ - You can pass the loader att to the Image Component so you can change the src or any config in the photo
+ 
