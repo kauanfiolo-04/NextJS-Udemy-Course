@@ -18,7 +18,7 @@ const lucia = new Lucia(adapter, {
   }
 });
 
-export const createAuthSession = async (userId) => {
+const createAuthSession = async (userId) => {
   const session = await lucia.createSession(userId, {});
   const sessionCookie = lucia.createSessionCookie(session.id);
 
@@ -29,7 +29,7 @@ export const createAuthSession = async (userId) => {
   );
 };
 
-export const verifyAuth = async () => {
+const verifyAuth = async () => {
   const sessionCookie = cookies().get(lucia.sessionCookieName);
 
   if (!sessionCookie) {
@@ -73,4 +73,30 @@ export const verifyAuth = async () => {
   } catch {}
 
   return result;
+};
+
+const destroySession = async () => {
+  const { session } = await verifyAuth();
+
+  if (!session) {
+    return {
+      error: 'Unauthorized!'
+    }
+  }
+
+  await lucia.invalidateSession(session.id);
+
+  const sessionCookie = lucia.createBlankSessionCookie();
+
+  cookies().set(
+    sessionCookie.name,
+    sessionCookie.value,
+    sessionCookie.attributes
+  );
+};
+
+export {
+  createAuthSession,
+  verifyAuth,
+  destroySession
 };

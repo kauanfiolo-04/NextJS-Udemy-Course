@@ -2,7 +2,7 @@ import { verifyAuth } from '@/lib/auth';
 import { getTrainings } from '@/lib/training';
 import { redirect } from 'next/navigation';
 
-export default async function TrainingPage() {
+const TrainingPage = async () => {
   const result = await verifyAuth();
 
   if (!result.user) {
@@ -27,4 +27,6 @@ export default async function TrainingPage() {
       </ul>
     </main>
   );
-}
+};
+
+export default TrainingPage;
