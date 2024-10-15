@@ -1,0 +1,2 @@
+ - Use hash to manipulate user passwords
+ - Can use cookies() from 'next/headers' to manipulate the cookies
